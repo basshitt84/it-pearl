@@ -1,0 +1,37 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body{
+    background-color:#D4FFC9;
+      font-family: "Nunito", sans-serif;
+  }
+  
+  main {
+    background-color:#FFFEC9;
+    width:80vw;
+    /* longform */
+    margin-top:40px;
+    margin-right:auto;
+    margin-bottom:40px;
+    margin-left:auto;
+    /* Top / Right / Bottom/ Left */
+    margin: 40px auto 40px auto;
+    /* TOP/Bottom | LEFT/RIGHT */
+    margin: 40px auto;
+    border:2px solid #DFFFAD;
+    border-radius:6px;
+    
+    }
+  
+  header.primary {
+    background-color:#8fbdd9;
+    padding:20px;
+    background-image: url("https://assets.codepen.io/7248/bg_1.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+  }
