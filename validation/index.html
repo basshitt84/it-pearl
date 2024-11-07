@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submission</title>
+</head>
+<body>
+  <form action="https://brucebauer.info/assets/ITEC3650/datadump.php" method="post">
+    
+    <label for="FirstName">First Name:</label>
+    <input type="text" id="FirstName" name="FirstName" size="30" maxlength="30" required>
+    <br><br>
+    
+    <label for="MiddleInitial">Middle Initial:</label>
+    <input type="text" id="MiddleInitial" name="MiddleInitial" size="1" maxlength="1">
+    <br><br>
+    
+    <label for="LastName">Last Name:</label>
+    <input type="text" id="LastName" name="LastName" size="30" maxlength="30" required>
+    <br><br>
+    
+    <label for="Email">Email:</label>
+    <input type="email" id="Email" name="Email" size="30" maxlength="30" required>
+    <br><br>
+    
+    <label for="Sex">Sex:</label>
+    <select id="Sex" name="Sex" required>
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="N">N/A</option>
+    </select>
+    <br><br>
+    
+    <label for="Birthday">Birthday (MM/DD/YY):</label>
+    <input type="text" id="Birthday" name="Birthday" size="8" maxlength="8" required>
+    <br><br>
+    
+    <label for="Height">Height (inches):</label>
+    <input type="text" id="Height" name="Height" size="3" maxlength="3" required>
+    <br><br>
+    
+    <label for="Weight">Weight (lbs):</label>
+    <input type="text" id="Weight" name="Weight" size="3" maxlength="3" required>
+    <br><br>
+    
+    <label for="PhoneNumber">Phone Number:</label>
+    <input type="tel" id="PhoneNumber" name="PhoneNumber" size="14" maxlength="14" required>
+    <br><br>
+    
+    <label for="MaritalStatus">Marital Status:</label>
+    <select id="MaritalStatus" name="MaritalStatus" required>
+      <option value="S">Single</option>
+      <option value="M">Married</option>
+      <option value="D">Divorced</option>
+      <option value="L">Legally Separated</option>
+      <option value="W">Widowed</option>
+    </select>
+    <br><br>
+    
+    <label for="Address">Address:</label>
+    <input type="text" id="Address" name="Address" size="30" maxlength="30" required>
+    <br><br>
+    
+    <label for="City">City:</label>
+    <input type="text" id="City" name="City" size="30" maxlength="30" required>
+    <br><br>
+    
+    <label for="State">State:</label>
+    <select id="State" name="State" required>
+      <!-- Replace this comment with a state dropdown from the suggested search -->
+    </select>
+    <br><br>
+    
+    <label for="Zip">Zip:</label>
+    <input type="text" id="Zip" name="Zip" size="5" maxlength="5" required>
+    <br><br>
+    
+    <label>Taking Medications:</label>
+    <input type="radio" id="MedicationsYes" name="Medications" value="Y" required>
+    <label for="MedicationsYes">Yes</label>
+    <input type="radio" id="MedicationsNo" name="Medications" value="N" required>
+    <label for="MedicationsNo">No</label>
+    <br><br>
+    
+    <label for="MedicationsList">Medications List:</label>
+    <textarea id="MedicationsList" name="MedicationsList" rows="3" cols="30"></textarea>
+    <br><br>
+    
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
