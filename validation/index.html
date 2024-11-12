@@ -4,90 +4,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Submission</title>
+  <link href="assets/css/style.css" rel="stylesheet"/>
 </head>
 <body>
   <form action="https://brucebauer.info/assets/ITEC3650/datadump.php" method="post">
     
-    <label for="FirstName">First Name:</label>
-    <input type="text" id="FirstName" name="FirstName" size="30" maxlength="30" required>
-    <br><br>
+
+    <div class="form-group">
+      <label for="FirstName" class="formlabel">First Name:</label>
+      <input type="text" id="FirstName" name="FirstName" size="30" maxlength="30" required>
+    </div>
     
-    <label for="MiddleInitial">Middle Initial:</label>
-    <input type="text" id="MiddleInitial" name="MiddleInitial" size="1" maxlength="1">
-    <br><br>
+ 
+    <div class="form-group">
+      <label for="MiddleInitial" class="formlabel">Middle Initial:</label>
+      <input type="text" id="MiddleInitial" name="MiddleInitial" size="1" maxlength="1">
+    </div>
     
-    <label for="LastName">Last Name:</label>
-    <input type="text" id="LastName" name="LastName" size="30" maxlength="30" required>
-    <br><br>
+
+    <div class="form-group">
+      <label for="LastName" class="formlabel">Last Name:</label>
+      <input type="text" id="LastName" name="LastName" size="30" maxlength="30" required>
+    </div>
     
-    <label for="Email">Email:</label>
-    <input type="email" id="Email" name="Email" size="30" maxlength="30" required>
-    <br><br>
+ 
+    <div class="form-group">
+      <label for="Email" class="formlabel">Email:</label>
+      <input type="email" id="Email" name="Email" size="30" maxlength="30" required>
+    </div>
     
-    <label for="Sex">Sex:</label>
-    <select id="Sex" name="Sex" required>
-      <option value="M">Male</option>
-      <option value="F">Female</option>
-      <option value="N">N/A</option>
-    </select>
-    <br><br>
+   
+    <div class="form-group">
+      <label for="Sex" class="formlabel">Sex:</label>
+      <select id="Sex" name="Sex" required>
+        <option value="" disabled selected>Select your sex</option> <!-- Placeholder option -->
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+        <option value="N">N/A</option>
+      </select>
+    </div>
     
-    <label for="Birthday">Birthday (MM/DD/YY):</label>
-    <input type="text" id="Birthday" name="Birthday" size="8" maxlength="8" required>
-    <br><br>
+  
+    <div class="form-group">
+      <label for="Birthday" class="formlabel">Birthday:</label>
+      <input type="date" id="Birthday" name="Birthday" required>
+    </div>
     
-    <label for="Height">Height (inches):</label>
-    <input type="text" id="Height" name="Height" size="3" maxlength="3" required>
-    <br><br>
+
+    <div class="form-group">
+      <label for="Height" class="formlabel">Height (inches):</label>
+      <input type="text" id="Height" name="Height" size="3" maxlength="3" required>
+    </div>
     
-    <label for="Weight">Weight (lbs):</label>
-    <input type="text" id="Weight" name="Weight" size="3" maxlength="3" required>
-    <br><br>
+
+    <div class="form-group">
+      <label for="Weight" class="formlabel">Weight (lbs):</label>
+      <input type="text" id="Weight" name="Weight" size="3" maxlength="3" required>
+    </div>
+    <hr>
     
-    <label for="PhoneNumber">Phone Number:</label>
-    <input type="tel" id="PhoneNumber" name="PhoneNumber" size="14" maxlength="14" required>
-    <br><br>
+   
+    <div class="form-group">
+      <label for="PhoneNumber" class="formlabel">Phone Number:</label>
+      <input type="tel" id="PhoneNumber" name="PhoneNumber" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="xxx-xxx-xxxx" required>
+    </div>
     
-    <label for="MaritalStatus">Marital Status:</label>
-    <select id="MaritalStatus" name="MaritalStatus" required>
-      <option value="S">Single</option>
-      <option value="M">Married</option>
-      <option value="D">Divorced</option>
-      <option value="L">Legally Separated</option>
-      <option value="W">Widowed</option>
-    </select>
-    <br><br>
+ 
+    <div class="form-group">
+      <label for="MaritalStatus" class="formlabel">Marital Status:</label>
+      <select id="MaritalStatus" name="MaritalStatus" required>
+        <option value="" disabled selected>Select marital status</option> <!-- Placeholder option -->
+        <option value="S">Single</option>
+        <option value="M">Married</option>
+        <option value="D">Divorced</option>
+        <option value="L">Legally Separated</option>
+        <option value="W">Widowed</option>
+      </select>
+    </div>
     
-    <label for="Address">Address:</label>
-    <input type="text" id="Address" name="Address" size="30" maxlength="30" required>
-    <br><br>
+ 
+    <div class="form-group">
+      <label for="Address" class="formlabel">Address:</label>
+      <input type="text" id="Address" name="Address" size="30" maxlength="30" required>
+    </div>
     
-    <label for="City">City:</label>
-    <input type="text" id="City" name="City" size="30" maxlength="30" required>
-    <br><br>
+ 
+    <div class="form-group">
+      <label for="City" class="formlabel">City:</label>
+      <input type="text" id="City" name="City" size="30" maxlength="30" required>
+    </div>
     
-    <label for="State">State:</label>
-    <select id="State" name="State" required>
-      <!-- Replace this comment with a state dropdown from the suggested search -->
-    </select>
-    <br><br>
+
+    <div class="form-group">
+      <label for="State" class="formlabel">State:</label>
+      <select id="State" name="State" required>
+        <option value="" disabled selected>Select your state</option> <!-- Placeholder option -->
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+      </select>
+    </div>
     
-    <label for="Zip">Zip:</label>
-    <input type="text" id="Zip" name="Zip" size="5" maxlength="5" required>
-    <br><br>
+
+    <div class="form-group">
+      <label for="Zip" class="formlabel">Zip:</label>
+      <input type="text" id="Zip" name="Zip" size="5" maxlength="5" required>
+    </div>
     
-    <label>Taking Medications:</label>
-    <input type="radio" id="MedicationsYes" name="Medications" value="Y" required>
-    <label for="MedicationsYes">Yes</label>
-    <input type="radio" id="MedicationsNo" name="Medications" value="N" required>
-    <label for="MedicationsNo">No</label>
-    <br><br>
+    <hr>
+    <div class="form-group">
+      <label class="formlabel">Taking Medications:</label>
+      <input type="radio" id="MedicationsYes" name="Medications" value="Y" required>
+      <label for="MedicationsYes">Yes</label>
+      <input type="radio" id="MedicationsNo" name="Medications" value="N" required>
+      <label for="MedicationsNo">No</label>
+    </div>
     
-    <label for="MedicationsList">Medications List:</label>
-    <textarea id="MedicationsList" name="MedicationsList" rows="3" cols="30"></textarea>
-    <br><br>
+  
+    <div class="form-group">
+      <label for="MedicationsList" class="formlabel">Medications List:</label>
+      <textarea id="MedicationsList" name="MedicationsList" rows="3" cols="30" required></textarea>
+    </div>
     
-    <input type="submit" value="Submit">
+  
+    <div class="form-group">
+      <input type="submit" value="Submit">
+    </div>
   </form>
 </body>
-</html>
