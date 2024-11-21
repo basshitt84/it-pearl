@@ -1,134 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Submission</title>
-  <link href="assets/css/style.css" rel="stylesheet"/>
-</head>
-<body>
-  <form action="https://brucebauer.info/assets/ITEC3650/datadump.php" method="post">
-    
+    <head>
+        <meta charset="utf-8">
+        <title>itpearl | Ryan Hitt</title>
+        <meta name="description" content="Form for validation page">
+        <meta name="author" content="Ryan Hitt">
+    </head>
+    <body>
+        <h1>New Patient Registration</h1>
+        <p>Please fill out the form below</p>
+        <form id="PatientForm" action="https://brucebauer.info/assets/ITEC3650/datadump.php" method="post">
+            <label for="FirstName">First Name:</label>
+            <input type="text" id="FirstName" name="FirstName" size="30" maxlength="30"><br><br>
+           
+            <label for="MiddleInitial">Middle Initial:</label>
+            <input type="text" id="MiddleInitial" name="MiddleInitial" size="1" maxlength="1"><br><br>
+           
+            <label for="LastName">Last Name:</label>
+            <input type="text" id="LastName" name="LastName" size="30" maxlength="30"><br><br>
+           
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" size="30" maxlength="30"><br><br>
+           
+            <label>Sex:</label>
+            <input type="radio" id="male" name="Sex" value="M">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="Sex" value="F">
+            <label for="female">Female</label>
+            <input type="radio" id="na" name="Sex" value="N">
+            <label for="na">N/A</label><br><br>
+           
+            <label for="Birthday">Birthday:</label>
+            <input type="text" id="Birthday" name="Birthday" size="8" maxlength="10"><br><br>
+           
+            <label for="Height">Height (inches):</label>
+            <input type="text" id="Height" name="Height" size="3" maxlength="3"><br><br>
+           
+            <label for="Weight">Weight (pounds):</label>
+            <input type="text" id="Weight" name="Weight" size="3" maxlength="3"><br><br>
+           
+            <label for="PhoneNumber">Phone Number:</label>
+            <input type="tel" id="PhoneNumber" name="PhoneNumber" size="14" maxlength="14"><br><br>
+           
+            <label for="MaritalStatus">Marital Status:</label>
+            <select id="MaritalStatus" name="MaritalStatus">
+                <option value="">Select a Status...</option>
+                <option value="S">Single</option>
+                <option value="M">Married</option>
+                <option value="D">Divorced</option>
+                <option value="L">Legally Separated</option>
+                <option value="W">Widowed</option>
+            </select><br><br>
+           
+            <label for="Address">Address:</label>
+            <input type="text" id="Address" name="Address" size="30" maxlength="30"><br><br>
+           
+            <label for="City">City:</label>
+            <input type="text" id="City" name="City" size="30" maxlength="30"><br><br>
+           
+            <label for="State">State:</label>
+            <select id="State" name="State">
+                <option value="">Select a State...</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <!-- Add other states as needed -->
+            </select>
+            <input type="text" id="Zip" name="Zip" size="5" maxlength="5"><br><br>
+           
+            <label>Taking Medications:</label>
+            <input type="radio" id="yes" name="Medications" value="Y">
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="Medications" value="N">
+            <label for="no">No</label><br><br>
+           
+            <label for="MedicationsList">If yes, list medications here:</label><br>
+            <textarea id="MedicationsList" name="MedicationsList" rows="3" cols="30"></textarea><br><br>
+           
+            <button type="submit">Submit Patient Form</button>
+        </form>
 
-    <div class="form-group">
-      <label for="FirstName" class="formlabel">First Name:</label>
-      <input type="text" id="FirstName" name="FirstName" size="30" maxlength="30" required>
-    </div>
-    
- 
-    <div class="form-group">
-      <label for="MiddleInitial" class="formlabel">Middle Initial:</label>
-      <input type="text" id="MiddleInitial" name="MiddleInitial" size="1" maxlength="1">
-    </div>
-    
 
-    <div class="form-group">
-      <label for="LastName" class="formlabel">Last Name:</label>
-      <input type="text" id="LastName" name="LastName" size="30" maxlength="30" required>
-    </div>
-    
- 
-    <div class="form-group">
-      <label for="Email" class="formlabel">Email:</label>
-      <input type="email" id="Email" name="Email" size="30" maxlength="30" required>
-    </div>
-    
-   
-    <div class="form-group">
-      <label for="Sex" class="formlabel">Sex:</label>
-      <select id="Sex" name="Sex" required>
-        <option value="" disabled selected>Select your sex</option> 
-        <option value="M">Male</option>
-        <option value="F">Female</option>
-        <option value="N">N/A</option>
-      </select>
-    </div>
-    
-  
-    <div class="form-group">
-      <label for="Birthday" class="formlabel">Birthday:</label>
-      <input type="date" id="Birthday" name="Birthday" required>
-    </div>
-    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
+        <style>
+            .error {
+                 color: red;
+                 padding-left: 5px;
+            }
+         </style>
 
-    <div class="form-group">
-      <label for="Height" class="formlabel">Height (inches):</label>
-      <input type="text" id="Height" name="Height" size="3" maxlength="3" required>
-    </div>
-    
 
-    <div class="form-group">
-      <label for="Weight" class="formlabel">Weight (lbs):</label>
-      <input type="text" id="Weight" name="Weight" size="3" maxlength="3" required>
-    </div>
-    <hr>
-    
-   
-    <div class="form-group">
-      <label for="PhoneNumber" class="formlabel">Phone Number:</label>
-      <input type="tel" id="PhoneNumber" name="PhoneNumber" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="xxx-xxx-xxxx" required>
-    </div>
-    
- 
-    <div class="form-group">
-      <label for="MaritalStatus" class="formlabel">Marital Status:</label>
-      <select id="MaritalStatus" name="MaritalStatus" required>
-        <option value="" disabled selected>Select marital status</option> 
-        <option value="S">Single</option>
-        <option value="M">Married</option>
-        <option value="D">Divorced</option>
-        <option value="L">Legally Separated</option>
-        <option value="W">Widowed</option>
-      </select>
-    </div>
-    
- 
-    <div class="form-group">
-      <label for="Address" class="formlabel">Address:</label>
-      <input type="text" id="Address" name="Address" size="30" maxlength="30" required>
-    </div>
-    
- 
-    <div class="form-group">
-      <label for="City" class="formlabel">City:</label>
-      <input type="text" id="City" name="City" size="30" maxlength="30" required>
-    </div>
-    
+        <script>
+            $("#PatientForm").validate({
+                rules: {
+                    FirstName: {
+                        required: true
+                    },
+                    LastName: {
+                        required: true
+                    },
+                    Email: {
+                        required: true,
+                        email: true
+                    },
+                    Sex: {
+                        required: true
+                    },
+                    Birthday: {
+                        required: true,
+                        date: true
+                    },
+                    Height: {
+                        required: true,
+                        number: true,
+                        min: 12,
+                        max: 120
+                    },
+                    Weight: {
+                        required: true,
+                        number: true,
+                        min: 10,
+                        max: 500
+                    },
+                    PhoneNumber: {
+                        required: true,
+                        phoneUS: true
+                    },
+                    MaritalStatus: {
+                        required: true
+                    },
+                    Address: {
+                        required: true
+                    },
+                    City: {
+                        required: true
+                    },
+                    State: {
+                        required: true
+                    },
+                    Zip: {
+                        required: true,
+                        digits: true,
+                        minlength: 5,
+                        maxlength: 5
+                    },
+                    Medications: {
+                        required: true
+                    }
+                },
+                messages: {
+                    FirstName: {
+                        required: "Please enter your first name"
+                    },
+                    LastName: {
+                        required: "Please enter your last name"
+                    },
+                    Email: {
+                        required: "Please enter your email",
+                        email: "Please enter a valid email address"
+                    },
+                    Sex: {
+                        required: "Please select your sex"
+                    },
+                    Birthday: {
+                        required: "Please enter your birthday",
+                        date: "Please enter a valid date"
+                    },
+                    Height: {
+                        required: "Please enter your height",
+                        number: "Please enter a valid number",
+                        min: "Height must be at least 12 inches",
+                        max: "Height must be less than or equal to 120 inches"
+                    },
+                    Weight: {
+                        required: "Please enter your weight",
+                        number: "Please enter a valid number",
+                        min: "Weight must be at least 10 pounds",
+                        max: "Weight must be less than or equal to 500 pounds"
+                    },
+                    PhoneNumber: {
+                        required: "Please enter your phone number",
+                        phoneUS: "Please enter a valid US phone number"
+                    },
+                    MaritalStatus: {
+                        required: "Please select your marital status"
+                    },
+                    Address: {
+                        required: "Please enter your address"
+                    },
+                    City: {
+                        required: "Please enter your city"
+                    },
+                    State: {
+                        required: "Please select your state"
+                    },
+                    Zip: {
+                        required: "Please enter your zip code",
+                        digits: "Please enter only digits",
+                        minlength: "Zip code must be exactly 5 digits",
+                        maxlength: "Zip code must be exactly 5 digits"
+                    },
+                    Medications: {
+                        required: "Please select if you are taking medications"
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
 
-    <div class="form-group">
-      <label for="State" class="formlabel">State:</label>
-      <select id="State" name="State" required>
-        <option value="" disabled selected>Select your state</option> 
-        <option value="AL">Alabama</option>
-        <option value="AK">Alaska</option>
-        <option value="AZ">Arizona</option>
-      </select>
-    </div>
-    
 
-    <div class="form-group">
-      <label for="Zip" class="formlabel">Zip:</label>
-      <input type="text" id="Zip" name="Zip" size="5" maxlength="5" required>
-    </div>
-    
-    <hr>
-    <div class="form-group">
-      <label class="formlabel">Taking Medications:</label>
-      <input type="radio" id="MedicationsYes" name="Medications" value="Y" required>
-      <label for="MedicationsYes">Yes</label>
-      <input type="radio" id="MedicationsNo" name="Medications" value="N" required>
-      <label for="MedicationsNo">No</label>
-    </div>
-    
-  
-    <div class="form-group">
-      <label for="MedicationsList" class="formlabel">Medications List:</label>
-      <textarea id="MedicationsList" name="MedicationsList" rows="3" cols="30" required></textarea>
-    </div>
-    
-  
-    <div class="form-group">
-      <input type="submit" value="Submit">
-    </div>
-  </form>
-</body>
+
