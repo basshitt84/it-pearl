@@ -30,6 +30,6 @@ function calculateCircumference(r) {
     return 2 * Math.PI * r
 }
 function calculateArea(r) {
-    return Math.PI * Math.pow(r, 2);
+    return Math.PI * Math.pow(r, 2)
 }
 
