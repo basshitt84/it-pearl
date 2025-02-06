@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Load jQuery first -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Load jQuery Validation Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+    <!-- Load your custom script last -->
+    <script src="assets/js/calculator.js"></script>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<form id="calculatorForm">
+    <h1>Javascript Calculator</h1>
+    
+    <!-- Operand 1 -->
+    <label for="Operand1">Operand 1: </label>
+    <input type="text" id="Operand1" name="Operand1" required>
+    <span id="Operand1Error" class="error-message"></span><br><br>
+
+    <!-- Operator -->
+    <label>Operator: </label>
+    <input type="radio" name="Operator" value="+" required> +
+    <input type="radio" name="Operator" value="-" required> -
+    <input type="radio" name="Operator" value="*" required> *
+    <input type="radio" name="Operator" value="/" required> / 
+    <span id="OperatorError" class="error-message"></span><br><br>
+
+    <!-- Operand 2 -->
+    <label for="Operand2">Operand 2: </label>
+    <input type="text" id="Operand2" name="Operand2" required>
+    <span id="Operand2Error" class="error-message"></span><br><br>
+
+    
+
+    <!-- Buttons -->
+    <button type="button" id="calculateBtn">Calculate</button>
+    <button type="button" id="clearBtn">Clear</button><br><br>
+
+    <!-- Result -->
+    <label>Result: </label> <span id="Result"></span>
+</form>
+
+</body>
+</html>
