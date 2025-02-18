@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter (AJAX)</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1>Unit Converter (AJAX)</h1>
+        <hr>
+
+        <form id="converterForm">
+            <label>From Value:</label>
+            <input type="number" id="fromValue">
+            <span id="valueError" class="error">Value is Required</span>
+            <br><br>
+
+            <label>From Unit:</label>
+            <div class="radio-group">
+                <input type="radio" name="fromUnit" value="cm"> centimeters
+                <input type="radio" name="fromUnit" value="m"> meters
+                <input type="radio" name="fromUnit" value="km"> kilometers
+                <input type="radio" name="fromUnit" value="in"> inches
+                <input type="radio" name="fromUnit" value="ft"> feet
+                <input type="radio" name="fromUnit" value="yd"> yards
+                <input type="radio" name="fromUnit" value="mi"> miles
+            </div>
+            <span id="fromUnitError" class="error">From Unit is Required</span>
+            <br><br>
+
+            <label>To Unit:</label>
+            <div class="radio-group">
+                <input type="radio" name="toUnit" value="cm"> centimeters
+                <input type="radio" name="toUnit" value="m"> meters
+                <input type="radio" name="toUnit" value="km"> kilometers
+                <input type="radio" name="toUnit" value="in"> inches
+                <input type="radio" name="toUnit" value="ft"> feet
+                <input type="radio" name="toUnit" value="yd"> yards
+                <input type="radio" name="toUnit" value="mi"> miles
+            </div>
+            <span id="toUnitError" class="error">To Unit is Required</span>
+            <br><br>
+
+            <label>To Value:</label>
+            <input type="text" id="toValue" readonly>
+            <br><br>
+
+            <button type="button" id="calculateBtn">Calculate</button>
+            <button type="reset" id="clearBtn">Clear</button>
+        </form>
+    </div>
+
+    <script src="js/unitsconversion.js"></script>
+</body>
+</html>

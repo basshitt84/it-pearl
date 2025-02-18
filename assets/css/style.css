@@ -1,61 +1,60 @@
-
 body {
-  font-family: "EB Garamond", serif; 
-  background-color: #f4f4f9; 
-  color: #333; 
+  font-family: "EB Garamond", serif;
+  background-color: #f4f4f9;
+  color: #333;
   margin: 0;
-  padding: 0;}
+  padding: 0;
+}
 
-
- body::before {
-  content: ""; 
+body::before {
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../img/51FF3DA6-88B8-4C2E-B328-760F7B2F71CE.jpg); 
-  background-size: cover; 
-  background-position: center; 
-  opacity: 0.2; 
-  z-index: -1; }
+  background: url(../img/51FF3DA6-88B8-4C2E-B328-760F7B2F71CE.jpg) center/cover;
+  opacity: 0.1;
+  z-index: -1;
+}
 
 h1 {
-  text-align: center; 
-  margin-top: 20px; 
-  color: #2c3e50; 
+  text-align: center;
+  margin-top: 20px;
+  color: #2c3e50;
   font-size: 3rem;
 }
 
 nav {
-  margin-top: 10px; 
-  text-align: center; 
+  margin-top: 10px;
+  text-align: center;
 }
 
 nav ul {
-  list-style-type: none; 
+  list-style: none;
   padding: 0;
-margin: 5px; }
+  margin: 5px;
+}
 
 nav ul li {
-  display: block; 
-  margin-right: 20px; 
-  margin-bottom:10px;
+  display: block;
+  margin: 0 20px 10px 0;
   font-size: 3rem;
 }
 
 nav ul li a {
-  text-decoration: none; 
-  color: #3498db; 
-  font-size: 1.2rem; 
-  padding: 10px 20px; 
-  border-radius: 5px; 
-  background-color: #ecf0f1; 
-  transition: background-color 0.3s ease, color 0.3s ease; 
+  display: inline-block;
+  text-decoration: none;
+  color: #3498db;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #ecf0f1;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
-  background-color: #3498db; 
-  color: white; }
-  
-  
+  background-color: #3498db;
+  color: white;
+}
+
