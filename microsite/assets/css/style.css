@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -10,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  
 
   
 }
@@ -19,8 +21,11 @@ body {
   background-color: #495d4e;
   color: white;
   padding: 10px;
-  font-size: 45px;
+  font-size: 55px;
   font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
 
 
@@ -29,8 +34,9 @@ body {
 }
 
 .nav-buttons {
- 
-  padding: 20px;
+ margin-top: -4%;
+ margin-bottom: 2%;
+  padding: 15px;
   display: flex;
   justify-content: center; 
   gap: 20px; 
@@ -46,17 +52,17 @@ body {
 }
 
 .nav-button:hover {
-  background-color: #e67e22;
+  background-color: white;
   opacity: 0.8;
+  background-image: url(../img/cossatot.jpg);
 }
 
 .content {
   flex: 1;
   padding: 50px 20px;
-  background-image: url(../img/opac2.png);
+  color: #495d4e;
   background-size: cover;
-  opacity: 0.28;
-  
+ 
 }
 .container {
 
@@ -82,11 +88,13 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 5px;
+
 }
 
 .back-to-top:hover {
-  background-color: #e67e22;
+  background-color: white;
   opacity: 0.8;
+  background-image: url(../img/cossatot.jpg);
 }
 
 /* Media queries */
