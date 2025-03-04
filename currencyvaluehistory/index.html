@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Value History</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Currency Value History</h1>
+        <form id="currency-form" class="form">
+            <div class="form-group">
+                <label for="from-currency" class="label">From Currency:</label>
+                <select id="from-currency" name="from-currency" required class="select">
+                    <option value="">Select a currency</option>
+                    <option value="USD">US Dollar</option>
+                    <option value="EUR">Euro</option>
+                    <option value="GBP">British Pound</option>
+                    <option value="JPY">Japanese Yen</option>
+                    <option value="AUD">Australian Dollar</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="to-currency" class="label">To Currency:</label>
+                <select id="to-currency" name="to-currency" required class="select">
+                    <option value="">Select a currency</option>
+                    <option value="USD">US Dollar</option>
+                    <option value="EUR">Euro</option>
+                    <option value="GBP">British Pound</option>
+                    <option value="JPY">Japanese Yen</option>
+                    <option value="AUD">Australian Dollar</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="from-date" class="label">From Date:</label>
+                <input type="date" id="from-date" name="from-date" required class="input">
+            </div>
+            <div class="form-group">
+                <label for="to-date" class="label">To Date:</label>
+                <input type="date" id="to-date" name="to-date" required class="input">
+            </div>
+            <button type="submit" class="btn btn-primary submit-button">Show Results</button>
+            <button type="reset" class="btn btn-secondary clear-button">Clear</button>
+        </form>
+        <div id="error-message" class="error-message"></div>
+        <canvas id="chart" class="chart"></canvas>
+    </div>
+
+    <script src="javascript/script.js"></script>
+</body>
+</html>

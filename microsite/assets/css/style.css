@@ -38,6 +38,7 @@ body {
  margin-bottom: 2%;
   padding: 15px;
   display: flex;
+  flex-direction: row;
   justify-content: center; 
   gap: 20px; 
 }
