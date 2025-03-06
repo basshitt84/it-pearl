@@ -79,6 +79,18 @@ li:hover .sub-list {
  
 
   }
+  
+.container{
+  padding: 20px;
+    margin: 40px auto;
+    background-image: linear-gradient(to right, #ff0000, #0000ff);
+
+    background-clip: text;
+  
+    color: transparent;
+  
+  }
+  
 
   
   
