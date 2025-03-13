@@ -2,53 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,">
+    <meta name="description" content="Currency Value History">
+    <meta name="keywords" content="HTML, CSS, JavaScript, AJAX, jQuery, Chart.js">
+    <meta name="author" content="Ryan Hitt">
     <title>Currency Value History</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">Currency Value History</h1>
-        <form id="currency-form" class="form">
-            <div class="form-group">
-                <label for="from-currency" class="label">From Currency:</label>
-                <select id="from-currency" name="from-currency" required class="select">
-                    <option value="">Select a currency</option>
-                    <option value="USD">US Dollar</option>
-                    <option value="EUR">Euro</option>
-                    <option value="GBP">British Pound</option>
-                    <option value="JPY">Japanese Yen</option>
-                    <option value="AUD">Australian Dollar</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="to-currency" class="label">To Currency:</label>
-                <select id="to-currency" name="to-currency" required class="select">
-                    <option value="">Select a currency</option>
-                    <option value="USD">US Dollar</option>
-                    <option value="EUR">Euro</option>
-                    <option value="GBP">British Pound</option>
-                    <option value="JPY">Japanese Yen</option>
-                    <option value="AUD">Australian Dollar</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="from-date" class="label">From Date:</label>
-                <input type="date" id="from-date" name="from-date" required class="input">
-            </div>
-            <div class="form-group">
-                <label for="to-date" class="label">To Date:</label>
-                <input type="date" id="to-date" name="to-date" required class="input">
-            </div>
-            <button type="submit" class="btn btn-primary submit-button">Show Results</button>
-            <button type="reset" class="btn btn-secondary clear-button">Clear</button>
-        </form>
-        <div id="error-message" class="error-message"></div>
-        <canvas id="chart" class="chart"></canvas>
-    </div>
+    <form id="currencyForm" onsubmit="return false">
+        <div class="formcontainer">
+            <h2>Currency Value History</h2>
 
-    <script src="javascript/script.js"></script>
+            <label for="baseCurrency" class="formlabel">Base Currency:</label>
+            <select id="baseCurrency" name="baseCurrency" required>
+                <option value="">Select a Currency...</option>
+                <option value="USD">US Dollar (USD)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="GBP">British Pound (GBP)</option>
+                <option value="JPY">Japanese Yen (JPY)</option>
+                <option value="AUD">Australian Dollar (AUD)</option>
+            </select>
+            <span class="error" id="baseCurrencyError"></span>
+
+            <br><br>
+
+            <label for="convertCurrency" class="formlabel">Convert to Currency:</label>
+            <select id="convertCurrency" name="convertCurrency" required>
+                <option value="">Select a Currency...</option>
+                <option value="USD">US Dollar (USD)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="GBP">British Pound (GBP)</option>
+                <option value="JPY">Japanese Yen (JPY)</option>
+                <option value="AUD">Australian Dollar (AUD)</option>
+            </select>
+            <span class="error" id="convertCurrencyError"></span>
+
+            <br><br>
+
+            <label for="fromDate" class="formlabel">From Date:</label>
+            <input type="date" id="fromDate" name="fromDate" required>
+            <span class="error" id="fromDateError"></span>
+
+            <br><br>
+
+            <label for="toDate" class="formlabel">To Date:</label>
+            <input type="date" id="toDate" name="toDate" required>
+            <span class="error" id="toDateError"></span>
+
+            <br><br>
+
+            <input type="submit" value="Show Results" id="showResults" onclick="GetCurrencyData();">
+            <input type="button" value="Clear" id="clear" onclick="ClearForm();">
+
+            <hr>
+            <canvas id="currencyChart"></canvas>
+        </div>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/chart.js"></script>
 </body>
 </html>
