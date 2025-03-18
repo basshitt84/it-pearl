@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cossatot River State Park - Weather Forecast</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Jersey+15&family=Jersey+25+Charted&family=Nabla&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron&family=Rubik+Dirt&family=UnifrakturMaguntia&family=Vast+Shadow&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+    
+</head>
+<body>
+    <div class="banner">
+        <h1>Cossatot River State Park</h1>
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="camping.html" class="nav-button">Lodging/Camping</a>
+            <a href="faq.html" class="nav-button">FAQ</a>
+            <a href="weather.html" class="nav-button">Weather/Temp</a>
+            <a href="contact.html" class="nav-button">Contact</a>
+
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <h2>Weather Forecast</h2>
+            <form id="weatherForm">
+                <label for="location">Enter Location:</label>
+                <input type="text" id="location" name="location" placeholder="e.g., Cossatot River State Park" required>
+                <button type="submit">Get Weather</button>
+            </form>
+            <div id="weatherResult">
+                <p id="loading" style="display: none;">Loading weather data...</p>
+            </div>
+            <div class="chart-container">
+                <canvas id="weatherChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="mailto:srhitt@ualr.edu">Contact</a>
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
