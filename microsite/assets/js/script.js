@@ -1,18 +1,3 @@
-$(document).ready(function() {
-
-    $('.fade').slick({
-      dots: true,
-      infinite: true,
-      speed: 500,
-      fade: true,
-      slide: 'div',
-      cssEase: 'linear',
-      autoplay: true,
-      autoplaySpeed: 2000
-    });
-
-
-});
 
 
 
@@ -125,4 +110,19 @@ document.getElementById('weatherForm').addEventListener('submit', async function
 // Trigger the form submission automatically for default location on page load
 window.addEventListener('load', function () {
     document.getElementById('weatherForm').dispatchEvent(new Event('submit'));
+});
+$(document).ready(function() {
+
+    $('.fade').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      slide: 'div',
+      cssEase: 'linear',
+      autoplay: true,
+      autoplaySpeed: 2000
+    });
+
+
 });
