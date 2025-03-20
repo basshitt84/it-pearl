@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cossatot River State Park - Weather Forecast</title>
+    <title>Cossatot River State Park - Weather</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Jersey+15&family=Jersey+25+Charted&family=Nabla&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron&family=Rubik+Dirt&family=UnifrakturMaguntia&family=Vast+Shadow&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
-    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@200..1000&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="banner">
@@ -18,34 +17,57 @@
             <a href="index.html" class="nav-button">Home</a>
             <a href="camping.html" class="nav-button">Lodging/Camping</a>
             <a href="faq.html" class="nav-button">FAQ</a>
-            <a href="weather.html" class="nav-button">Weather/Temp</a>
+            <a href="weather.html" class="nav-button">Weather</a>
             <a href="contact.html" class="nav-button">Contact</a>
-
         </div>
     </div>
 
-    <div class="content">
-        <div class="container">
-            <h2>Weather Forecast</h2>
-            <form id="weatherForm">
-                <label for="location">Enter Location:</label>
-                <input type="text" id="location" name="location" placeholder="e.g., Cossatot River State Park" required>
-                <button type="submit">Get Weather</button>
-            </form>
-            <div id="weatherResult">
-                <p id="loading" style="display: none;">Loading weather data...</p>
-            </div>
-            <div class="chart-container">
-                <canvas id="weatherChart"></canvas>
-            </div>
+    <section id="content" class="container">
+        <h1>Weather Forecast</h1>
+        <p>Enter a location to get the current forecast:</p>
+
+        <!-- Form for user input -->
+        <form id="weatherForm">
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" name="location" placeholder="e.g., Cossatot River State Park" required value="Duckett, AR">
+            <button type="submit">Get Forecast</button>
+        </form>
+
+        <!-- Loading message -->
+        <p id="loading" style="display: none;">Loading weather data...</p>
+
+        <!-- Location info -->
+        <div id="location-info">
+            <p><strong>Latitude:</strong> <span id="latitude"></span></p>
+            <p><strong>Longitude:</strong> <span id="longitude"></span></p>
+            <p><strong>Place:</strong> <span id="place-name"></span></p>
+            <p><strong>Region:</strong> <span id="admin"></span></p>
+            <p><strong>Country:</strong> <span id="country"></span></p>
         </div>
-    </div>
+
+        <!-- Forecast table and chart -->
+        <div id="forecast-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Temperature (°F)</th>
+                    </tr>
+                </thead>
+                <tbody id="forecast-table"></tbody>
+            </table>
+            <canvas id="forecast-chart"></canvas>
+        </div>
+
+        <!-- Error message -->
+        <p id="error-message" style="color: red;"></p>
+    </section>
 
     <div class="footer">
         <a href="mailto:srhitt@ualr.edu">Contact</a>
         <a href="#top" class="back-to-top">Back to Top</a>
     </div>
-
+    
     <script src="assets/js/script.js"></script>
 </body>
 </html>
