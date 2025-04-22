@@ -334,7 +334,7 @@ color: #ffffff;
 /*  ---------------list-----------------  */
 #cabin-details {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: auto auto auto;
   gap: 20px;
   width: 80vw;
   max-width: 1000px;
@@ -343,7 +343,9 @@ color: #ffffff;
 
 }
 
-#cabin-details h1{}
+#cabin-details h1{
+
+}
 
 
 
