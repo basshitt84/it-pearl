@@ -233,6 +233,7 @@ overflow: visible;
 }
 
 
+
 /*  ---------------Water Level-----------------  */
 
 .buttons{
@@ -329,6 +330,39 @@ color: white;
 .data-item p {
 font-size: 1rem;
 color: #ffffff;
+}
+/*  ---------------list-----------------  */
+#cabin-details {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  width: 80vw;
+  max-width: 1000px;
+  margin: 20px auto;
+
+
+}
+
+#cabin-details h1{}
+
+
+
+#amenities{
+
+}
+#rates{
+
+}
+
+#address{
+
+}
+
+#content2 ul{
+
+  grid-column: 1 / 12;
+  text-align: left;
+
 }
 
 

@@ -17,4 +17,3 @@ $(window).on('load', function() {
       focusOnSelect: true
     });
   });
-  
