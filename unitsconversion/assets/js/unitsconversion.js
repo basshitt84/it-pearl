@@ -1,53 +1,99 @@
-document.getElementById('calculateBtn').addEventListener('click', function() {
-    let value = document.getElementById('fromValue').value;
-    let fromUnit = document.querySelector('input[name="fromUnit"]:checked');
-    let toUnit = document.querySelector('input[name="toUnit"]:checked');
+// units conversion script
 
-    // Reset error messages
-    document.getElementById('valueError').style.display = "none";
-    document.getElementById('fromUnitError').style.display = "none";
-    document.getElementById('toUnitError').style.display = "none";
+async function calculate() {
+    "use strict";
+    /* Make sure that the form is valid */
+    if ($( "#myform" ).valid()) {
+        
+        /* get the operands from the form */
+        let fromValue = document.getElementById("FromValue").value;
+        let fromUnit;
+        if (document.getElementById("FromCentimeters").checked) {
+            fromUnit = document.getElementById("FromCentimeters").value;
+        }
+        if (document.getElementById("FromMeters").checked) {
+            fromUnit = document.getElementById("FromMeters").value;
+        }
+        if (document.getElementById("FromKilometers").checked) {
+            fromUnit = document.getElementById("FromKilometers").value;
+        }
+        if (document.getElementById("FromInches").checked) {
+            fromUnit = document.getElementById("FromInches").value;
+        }
+        if (document.getElementById("FromFeet").checked) {
+            fromUnit = document.getElementById("FromFeet").value;
+        }
+        if (document.getElementById("FromYards").checked) {
+            fromUnit = document.getElementById("FromYards").value;
+        }
+        if (document.getElementById("FromMiles").checked) {
+            fromUnit = document.getElementById("FromMiles").value;
+        }
 
-    // Validation
-    if (!value) {
-        document.getElementById('valueError').style.display = "inline";
-        return;
+        let toUnit;
+        if (document.getElementById("ToCentimeters").checked) {
+            toUnit = document.getElementById("ToCentimeters").value;
+        }
+        if (document.getElementById("ToMeters").checked) {
+            toUnit = document.getElementById("ToMeters").value;
+        }
+        if (document.getElementById("ToKilometers").checked) {
+            toUnit = document.getElementById("ToKilometers").value;
+        }
+        if (document.getElementById("ToInches").checked) {
+            toUnit = document.getElementById("ToInches").value;
+        }
+        if (document.getElementById("ToFeet").checked) {
+            toUnit = document.getElementById("ToFeet").value;
+        }
+        if (document.getElementById("ToYards").checked) {
+            toUnit = document.getElementById("ToYards").value;
+        }
+        if (document.getElementById("ToMiles").checked) {
+            toUnit = document.getElementById("ToMiles").value;
+        }
+        
+        /* Calculate conversion via fetch*/
+         let myURL = "https://brucebauer.info/assets/ITEC3650/unitsconversion.php";
+
+        /*AJAX calc requires the From unit and to unit */
+         myURL = myURL + "?FromValue=" + encodeURIComponent(fromValue) + "&FromUnit=" + encodeURIComponent(fromUnit) + "&ToUnit=" + encodeURIComponent(toUnit);
+       
+         /*fetch batch */
+         let myConversion = await fetch(myURL);
+         let toValue = await myConversion.text();
+
+        /* convert the result to a string and display it */
+        document.getElementById("ToValue").innerHTML = toValue.toString();
     }
-    if (!fromUnit) {
-        document.getElementById('fromUnitError').style.display = "inline";
-        return;
-    }
-    if (!toUnit) {
-        document.getElementById('toUnitError').style.display = "inline";
-        return;
-    }
+}
 
-    fromUnit = fromUnit.value;
-    toUnit = toUnit.value;
+function clearform() {
+    
+    /* Set all of the form values to blank or false */
+    document.getElementById("FromValue").value = "";
+    document.getElementById("FromCentimeters").checked = false;
+    document.getElementById("FromMeters").checked = false;
+    document.getElementById("FromKilometers").checked = false;
+    document.getElementById("FromInches").checked = false;
+    document.getElementById("FromFeet").checked = false;
+    document.getElementById("FromYards").checked = false;
+    document.getElementById("FromMiles").checked = false;
 
-    // Conversion factors stored in JavaScript
-    const conversions = {
-        "cm": { "m": 0.01, "km": 0.00001, "in": 0.3937, "ft": 0.0328, "yd": 0.0109, "mi": 0.00000621 },
-        "m": { "cm": 100, "km": 0.001, "in": 39.37, "ft": 3.281, "yd": 1.094, "mi": 0.000621 },
-        "km": { "cm": 100000, "m": 1000, "in": 39370, "ft": 3281, "yd": 1094, "mi": 0.621 },
-        "in": { "cm": 2.54, "m": 0.0254, "km": 0.0000254, "ft": 0.0833, "yd": 0.0278, "mi": 0.00001578 },
-        "ft": { "cm": 30.48, "m": 0.3048, "km": 0.0003048, "in": 12, "yd": 0.333, "mi": 0.000189 },
-        "yd": { "cm": 91.44, "m": 0.9144, "km": 0.000914, "in": 36, "ft": 3, "mi": 0.000568 },
-        "mi": { "cm": 160934, "m": 1609.34, "km": 1.609, "in": 63360, "ft": 5280, "yd": 1760 }
-    };
+    document.getElementById("ToCentimeters").checked = false;
+    document.getElementById("ToMeters").checked = false;
+    document.getElementById("ToKilometers").checked = false;
+    document.getElementById("ToInches").checked = false;
+    document.getElementById("ToFeet").checked = false;
+    document.getElementById("ToYard").checked = false;
+    document.getElementById("ToMiles").checked = false;
 
-    // Convert value
-    let conversionFactor = conversions[fromUnit][toUnit];
+    document.getElementById("FromUnitError").innerHTML = "";
+    document.getElementById("ToUnitError").innerHTML = "";
+    document.getElementById("ToValue").innerHTML = "";
+}
 
-    if (conversionFactor) {
-        let result = value * conversionFactor;
-        document.getElementById('toValue').value = result.toFixed(4);
-    } else {
-        alert("Conversion not available.");
-    }
-});
-
-// Clear button resets all fields
-document.getElementById('clearBtn').addEventListener('click', function() {
-    document.getElementById('toValue').value = "";
+/* Form Validation */
+$( "#myform" ).validate({
+ 
 });
