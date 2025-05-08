@@ -23,7 +23,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Pacifico&family=Rubik+Dirt&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <title>Buffalo River</title>
 </head>
 <body>
@@ -32,9 +31,9 @@
             <figure>
                 <a href="index.html">
                   <img src="assets/img/header-logo1.png" alt="Buffalo River logo">
+                  <h4>Buffalo <br> BaseCamp</h4> 
                 </a>
               </figure>
-              
             <nav class="navbar">
                 <div class="hamburger" onclick="toggleMenu()">
                     &#9776;
@@ -50,19 +49,17 @@
             </nav>
         </header>
         <section id="bio">
-            <img src="assets/img/water.png" alt="Buffalo River" class="cover-img">
+            <img src="assets/img/waterlevel.jpg" alt="Buffalo River" class="cover-img">
             <div class="bio-text">
-                <h1>Adventure Awaits</h1>
+                <h1>Water Level</h1>
             </div>
         </section>
-        
         <section class="container">
             <div id="content">
             <h1 class="intro"> Water Levels in Arkansas </h1>
             <h2> Choose a River</h2>
             </div>
         </section>
-
         <section> 
             <div class="buttons">
                 <button data-site-code="07055646">Boxley, AR</button>
@@ -71,18 +68,15 @@
                 <button data-site-code="07055680">Pruitt, AR</button>
               </div>
         </section>
-      
         <section>
             <div id="chart-container">
                 <canvas id="waterLevelChart"></canvas>
             </div>
         </section>
-       
         <section>
             <div class="data-container" id="weatherData">
             </div>
         </section>
-
         <footer>
             <div class="footer-container">
                 <div class="footer-logo-section">
@@ -101,7 +95,6 @@
                 </a>
                 </div>
                 </div>
-
             <div class="info-section">
                 <div class="vl">
                     <div class="vl-text"> Buffalo </div>
@@ -110,16 +103,17 @@
                     <div class="vl-text3"> AR-43, Compton, AR 72624</div>
                 </div>
             </div>
-
             <div class="contact">
                 <h6>Contact Us</h6>
-                <form class="form">
+                <form class="form" action="https://formspree.io/f/mzzrbkzg"
+                method="POST" >
                     <div class="form-row">
                         <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
                         <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
                     </div>
                     <div class="form-row">
                         <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="message" id="message" name="message" placeholder="Message" required>
                     </div>
                     <div class="form-row">
                         <button type="submit">Submit</button>
@@ -141,8 +135,6 @@
 		        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
 	        </svg>
         </div>
-
     </main>
-    
 </body>
 </html>

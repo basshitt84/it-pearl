@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="buffalo river project">
     <meta name="keywords" content="buffalo, river, adventure">
-    <meta name="author" content="Sally Alazab">
+    <meta name="author" content="Ryan Hitt">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
@@ -22,7 +22,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Pacifico&family=Rubik+Dirt&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <title>Buffalo River</title>
 </head>
 <body>
@@ -31,7 +30,7 @@
             <figure>
                 <a href="index.html">
                   <img src="assets/img/header-logo1.png" alt="Buffalo River logo">
-                  <h4>Buffalo BaseCamp</h4> 
+                  <h4>Buffalo <br> BaseCamp</h4> 
                 </a>
               </figure>            
             <nav class="navbar">
@@ -54,34 +53,30 @@
                 <h1>Adventure Awaits</h1>
             </div>
         </section>
-        
         <section class="container">
             <div id="content">
             <h1 class="intro"> Welcome </h1>
             <p> Experience the best of the Ozarks with unforgettable stays and outdoor excitement. From charming cabins and scenic canoe trips to thrilling zip line adventures, Buffalo River Adventures is your go-to destination for fun, relaxation, and memory-making. </p>
             </div>
         </section>
-      
           <section class="thumb">
               <div class="thumb-wrapper">
                 <img src="assets/img/cabins.png" alt="Buffalo River Cabin">
-                <a href="index.html" class="thumb-text">Cabins</a>
+                <a href="index-cabins.html" class="thumb-text">Cabins</a>
               </div>
               <div class="thumb-wrapper">
                 <img src="assets/img/float.png" alt="Buffalo River Canoe">
-                <a href="about.html" class="thumb-text"> Float</a>
+                <a href="index-float.html" class="thumb-text"> Float</a>
               </div>
               <div class="thumb-wrapper">
                 <img src="assets/img/explore.png" alt="Buffalo River">
-                <a href="index.html" class="thumb-text">Explore</a>
+                <a href="index-about.html" class="thumb-text">Explore</a>
               </div>
               <div class="thumb-wrapper">
-                <img src="assets/img/water.png" alt="Buffalo River Water Level">
-                <a href="about.html" class="thumb-text">Water Level</a>
+                <img src="assets/img/waterlevel.jpg" alt="Buffalo River Water Level">
+                <a href="index-water-level.html" class="thumb-text">Water Level</a>
               </div>
           </section>
-          
-
         <footer>
             <div class="footer-container">
                 <div class="footer-logo-section">
@@ -100,7 +95,6 @@
                 </a>
                 </div>
                 </div>
-
             <div class="info-section">
                 <div class="vl">
                     <div class="vl-text"> Buffalo </div>
@@ -109,16 +103,17 @@
                     <div class="vl-text3"> AR-43, Compton, AR 72624</div>
                 </div>
             </div>
-
             <div class="contact">
                 <h6>Contact Us</h6>
-                <form class="form">
+                <form class="form" action="https://formspree.io/f/mzzrbkzg"
+                method="POST" >
                     <div class="form-row">
                         <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
                         <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
                     </div>
                     <div class="form-row">
                         <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="message" id="message" name="message" placeholder="Message" required>
                     </div>
                     <div class="form-row">
                         <button type="submit">Submit</button>
@@ -140,8 +135,6 @@
 		        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
 	        </svg>
         </div>
-
     </main>
-    
 </body>
 </html>
